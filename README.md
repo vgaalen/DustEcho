@@ -1,4 +1,4 @@
-# DustEcho
+# Dust Reprocessing Echo Analiser Module for Tidal disturption events - DREAMT
 
 This radiative transfer simulation is designed to model Dust Echos of Tidal Disruption Events
 
