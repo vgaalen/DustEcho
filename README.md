@@ -15,14 +15,15 @@ Installation on another OS is possible, but not supported by these instructions
  - CMake v3.2.2 or later.
  - git
  - python3
- - the following python-packages
+ - the following python-packages (a venv is included in the repo)
     - astropy
     - scipy
-    - numpy
     - matplolib
     - datetime
     - tqdm
     - reportlab
+    - lxml
+    - jupyter notebook / jupyterlab
 
 #### Get the source code
 
@@ -39,6 +40,8 @@ SKIRT uses a python package to interface with the simulator code. This has to be
 
 ```
 cd [YOURDIR]
+mkdir PTS
+cd PTS
 mkdir pts
 git clone https://github.com/SKIRT/PTS9.git pts
 ```
