@@ -1,0 +1,6 @@
+[submodule "SKIRT/git"]
+	path = SKIRT/git
+	url = https://github.com/SKIRT/SKIRT9.git
+[submodule "PTS/pts"]
+	path = PTS/pts
+	url = https://github.com/SKIRT/PTS.git
