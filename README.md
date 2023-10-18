@@ -30,8 +30,9 @@ Installation on another OS is possible, but not supported by these instructions
 Clone the github repository, build SKIRT's C++ code, and retrieve SKIRT's resources (these contain files too large for github and are therefore fetched seperately)
 ```
 git clone https://github.com/vgaalen/DustEcho [YOURDIR]
-cd [YOURDIR]
-chmod +rx SKIRT/git/makeSKIRT.sh
+cd [YOURDIR]/SKIRT/git
+chmod +rx makeSKIRT.sh
+chmod +rx downloadResources.sh
 ./SKIRT/git/makeSKIRT.sh
 ./SKIRT/git/downloadResources.sh
 ```
