@@ -33,16 +33,6 @@ git clone https://github.com/vgaalen/DustEcho [YOURDIR]
 cd [YOURDIR]/SKIRT/git
 chmod +rx makeSKIRT.sh
 chmod +rx downloadResources.sh
-./SKIRT/git/makeSKIRT.sh
-./SKIRT/git/downloadResources.sh
-```
-
-SKIRT uses a python package to interface with the simulator code. This has to be installed as well
-
-```
-cd [YOURDIR]
-mkdir PTS
-cd PTS
-mkdir pts
-git clone https://github.com/SKIRT/PTS9.git pts
+./makeSKIRT.sh
+./downloadResources.sh
 ```
