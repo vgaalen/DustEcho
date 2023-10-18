@@ -18,7 +18,7 @@ Installation on another OS is possible, but not supported by these instructions
  - the following python-packages (a venv is included in the repo)
     - astropy
     - scipy
-    - matplolib
+    - matplotlib
     - datetime
     - tqdm
     - reportlab

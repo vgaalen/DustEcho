@@ -1,3 +1,13 @@
+#ignore large files
+SKIRT/resources/
+SKIRT/release/
+results/
+plots/
+*.fits
+*.pdf
+*.gif
+*.sh
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

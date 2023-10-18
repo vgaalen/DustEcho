@@ -1,0 +1,44 @@
+\
+\fixlen = T
+\RowsRetrieved =                 1
+\ORIGIN  = 'IPAC Infrared Science Archive (IRSA), Caltech/JPL'
+\SIMULATED_TABLE  = 'n'
+\DATETIME= '2023-05-16 12:51:42'
+\DataTag = 'ADS/IRSA.Gator#2023/0516/125142_11745'
+\DATABASE= 'AllWISE Source Catalog (allwise_p3as_psd)'
+\EQUINOX = 'J2000'
+\SKYAREA = 'within 10 arcsec of  ra=192.06346 dec=+17.77402 Eq J2000 '
+\StatusFile = '/workspace/TMP_evIdFg_29310/Gator/irsa/11745/log.11745.html'
+\SQL     = 'WHERE (no constraints)
+\SQL     = 'SELECT (12 column names follow in next row.)'
+\
+\ ra (deg)
+\ ___ right ascension (J2000)
+\ dec (deg)
+\ ___ declination (J2000)
+\ w1mpro (mag)
+\ ___ instrumental profile-fit photometry magnitude, band 1
+\ w1sigmpro (mag)
+\ ___ instrumental profile-fit photometry flux uncertainty in mag units, band 1
+\ w2mpro (mag)
+\ ___ instrumental profile-fit photometry magnitude, band 2
+\ w2sigmpro (mag)
+\ ___ instrumental profile-fit photometry flux uncertainty in mag units, band 2
+\ w3mpro (mag)
+\ ___ instrumental profile-fit photometry magnitude, band 3
+\ w3sigmpro (mag)
+\ ___ instrumental profile-fit photometry flux uncertainty in mag units, band 3
+\ w4mpro (mag)
+\ ___ instrumental profile-fit photometry magnitude, band 4
+\ w4sigmpro (mag)
+\ ___ instrumental profile-fit photometry flux uncertainty in mag units, band 4
+\ dist (arcsec)
+\ ___ Distance between the target position and each source in arcsec.
+\ angle (deg)
+\ ___ Position Angle in degree.
+\
+|          ra|         dec|  w1mpro| w1sigmpro|  w2mpro| w2sigmpro|  w3mpro| w3sigmpro|  w4mpro| w4sigmpro|           dist|       angle|
+|      double|      double|  double|    double|  double|    double|  double|    double|  double|    double|         double|      double|
+|         deg|         deg|     mag|       mag|     mag|       mag|     mag|       mag|     mag|       mag|         arcsec|         deg|
+|        null|        null|    null|      null|    null|      null|    null|      null|    null|      null|           null|        null|
+  192.0634609   17.7740197   13.061      0.024   13.049      0.027   12.367      0.439    8.835       null        0.003074   109.292167

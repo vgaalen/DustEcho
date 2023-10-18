@@ -1,0 +1,71 @@
+ \
+\fixlen = T
+\RowsRetrieved =                26
+\ORIGIN  = 'IPAC Infrared Science Archive (IRSA), Caltech/JPL'
+\SIMULATED_TABLE  = 'n'
+\DATETIME= '2023-05-18 05:55:36'
+\DataTag = 'ADS/IRSA.Gator#2023/0518/055536_14618'
+\DATABASE= 'AllWISE Multiepoch Photometry Table (allwise_p3as_mep)'
+\EQUINOX = 'J2000'
+\SKYAREA = 'within 10 arcsec of  ra=314.26238 dec=+14.20441 Eq J2000 '
+\StatusFile = '/workspace/TMP_evIdFg_29310/Gator/irsa/14618/log.14618.html'
+\SQL     = 'WHERE (no constraints)
+\SQL     = 'SELECT (13 column names follow in next row.)'
+\
+\ ra (deg)
+\ ___ right ascension (J2000)
+\ dec (deg)
+\ ___ declination (J2000)
+\ mjd (day)
+\ ___ modified Julian date of the mid-point of the observation of the frame
+\ w1mpro_ep (mag)
+\ ___ Single-exposure profile-fit  magnitude, band 1
+\ w1sigmpro_ep (mag)
+\ ___ Single-exposure profile-fit photometric measurement uncertainty, band 1
+\ w2mpro_ep (mag)
+\ ___ Single-exposure profile-fit  magnitude, band 2
+\ w2sigmpro_ep (mag)
+\ ___ Single-exposure profile-fit photometric measurement uncertainty, band 2
+\ w3mpro_ep (mag)
+\ ___ Single-exposure profile-fit  magnitude, band 3
+\ w3sigmpro_ep (mag)
+\ ___ Single-exposure profile-fit photometric measurement uncertainty, band 3
+\ w4mpro_ep (mag)
+\ ___ Single-exposure profile-fit  magnitude, band 4
+\ w4sigmpro_ep (mag)
+\ ___ Single-exposure profile-fit photometric measurement uncertainty, band 4
+\ dist (arcsec)
+\ ___ Distance between the target position and each source in arcsec.
+\ angle (deg)
+\ ___ Position Angle in degree.
+\
+|          ra|         dec|            mjd| w1mpro_ep| w1sigmpro_ep| w2mpro_ep| w2sigmpro_ep| w3mpro_ep| w3sigmpro_ep| w4mpro_ep| w4sigmpro_ep|           dist|       angle|
+|      double|      double|         double|    double|       double|    double|       double|    double|       double|    double|       double|         double|      double|
+|         deg|         deg|            day|       mag|          mag|       mag|          mag|       mag|          mag|       mag|          mag|         arcsec|         deg|
+|        null|        null|           null|      null|         null|      null|         null|      null|         null|      null|         null|           null|        null|
+  314.2623723   14.2045204  55514.16670700     13.300         0.039     13.276         0.091       null          null       null          null        0.398347   356.131893
+  314.2623723   14.2045204  55328.59203220     13.310         0.040     13.224         0.078       null          null       null          null        0.398347   356.131893
+  314.2623723   14.2045204  55508.74376090     13.301         0.040     13.168         0.072       null          null       null          null        0.398347   356.131893
+  314.2623723   14.2045204  55508.61145690     13.326         0.037     13.173         0.071       null          null       null          null        0.398347   356.131893
+  314.2623723   14.2045204  55508.47915270     13.307         0.038     13.118         0.067       null          null       null          null        0.398347   356.131893
+  314.2623723   14.2045204  55508.41306440     13.353         0.038     13.321         0.076       null          null       null          null        0.398347   356.131893
+  314.2623723   14.2045204  55508.34697600     13.169         0.036     13.412         0.081       null          null       null          null        0.398347   356.131893
+  314.2623723   14.2045204  55508.28076030     13.369         0.038     13.396         0.085       null          null       null          null        0.398347   356.131893
+  314.2623723   14.2045204  55508.21467190     13.221         0.041     13.285         0.081       null          null       null          null        0.398347   356.131893
+  314.2623723   14.2045204  55508.14858360     13.244         0.043     13.240         0.073       null          null       null          null        0.398347   356.131893
+  314.2623723   14.2045204  55508.08236790     13.238         0.037     13.261         0.073       null          null       null          null        0.398347   356.131893
+  314.2623723   14.2045204  55508.01627950     13.305         0.038     13.151         0.068       null          null       null          null        0.398347   356.131893
+  314.2623723   14.2045204  55507.88397540     13.252         0.044     13.321         0.084       null          null       null          null        0.398347   356.131893
+  314.2623723   14.2045204  55507.75167130     13.278         0.044     13.308         0.080       null          null       null          null        0.398347   356.131893
+  314.2623723   14.2045204  55328.72433620     13.227         0.035     13.299         0.090     11.267         0.457      7.289          null        0.398347   356.131893
+  314.2623723   14.2045204  55328.85664040     13.220         0.038     13.320         0.088     10.684         0.284      7.965          null        0.398347   356.131893
+  314.2623723   14.2045204  55328.98894460     13.255         0.039     13.150         0.074     11.226         0.468      7.632         0.436        0.398347   356.131893
+  314.2623723   14.2045204  55329.05503300     13.218         0.036     13.286         0.074     10.830         0.346      7.728          null        0.398347   356.131893
+  314.2623723   14.2045204  55329.12124870     13.250         0.038     13.273         0.080     11.297         0.473      7.707         0.483        0.398347   356.131893
+  314.2623723   14.2045204  55329.18733710     13.274         0.039     13.141         0.066     10.593         0.267      7.462          null        0.398347   356.131893
+  314.2623723   14.2045204  55329.25355280     13.315         0.044     13.315         0.088     10.771          null      7.794          null        0.398347   356.131893
+  314.2623723   14.2045204  55329.31964120     13.320         0.039     13.258         0.071     10.566         0.263      7.707          null        0.398347   356.131893
+  314.2623723   14.2045204  55329.45194540     13.168         0.037     13.199         0.073     10.715          null      7.242          null        0.398347   356.131893
+  314.2623723   14.2045204  55329.58424110     13.303         0.042     13.248         0.074     10.958         0.359      7.380          null        0.398347   356.131893
+  314.2623723   14.2045204  55329.58436840     13.243         0.039     13.260         0.075     10.981         0.370      7.341          null        0.398347   356.131893
+  314.2623723   14.2045204  55329.71654510     13.249         0.048     13.206         0.069     10.721         0.270      7.608          null        0.398347   356.131893

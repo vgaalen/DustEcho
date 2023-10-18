@@ -1,0 +1,104 @@
+\
+\fixlen = T
+\RowsRetrieved =                35
+\ORIGIN  = 'IPAC Infrared Science Archive (IRSA), Caltech/JPL'
+\SIMULATED_TABLE  = 'n'
+\DATETIME= '2023-05-21 09:11:04'
+\DataTag = 'ADS/IRSA.Gator#2023/0521/091104_14055'
+\DATABASE= 'AllWISE Multiepoch Photometry Table (allwise_p3as_mep)'
+\EQUINOX = 'J2000'
+\SKYAREA = 'within 10 arcsec of  ra=192.06346 dec=+17.77402 Eq J2000 '
+\StatusFile = '/workspace/TMP_YxCi1m_12455/Gator/irsa/14055/log.14055.html'
+\SQL     = 'WHERE (no constraints)
+\SQL     = 'SELECT (25 column names follow in next row.)'
+\
+\ source_id_mf
+\ ___ Source id from Multiframe (coadd id and source number)
+\ ra (deg)
+\ ___ right ascension (J2000)
+\ dec (deg)
+\ ___ declination (J2000)
+\ nb
+\ ___ number of PSF components used in profile fit for source
+\ na
+\ ___ active deblend flag (=1 if actively deblended)
+\ cc_flags
+\ ___ contamination and confusion flags affecting the source in each band
+\ frame_id
+\ ___ frameset identifier
+\ mjd (day)
+\ ___ modified Julian date of the mid-point of the observation of the frame
+\ w1mpro_ep (mag)
+\ ___ Single-exposure profile-fit  magnitude, band 1
+\ w1sigmpro_ep (mag)
+\ ___ Single-exposure profile-fit photometric measurement uncertainty, band 1
+\ w1rchi2_ep
+\ ___ Reduced chi^2 of single-exposure profile-fit, band 1
+\ w2mpro_ep (mag)
+\ ___ Single-exposure profile-fit  magnitude, band 2
+\ w2sigmpro_ep (mag)
+\ ___ Single-exposure profile-fit photometric measurement uncertainty, band 2
+\ w2rchi2_ep
+\ ___ Reduced chi^2 of single-exposure profile-fit, band 2
+\ w3mpro_ep (mag)
+\ ___ Single-exposure profile-fit  magnitude, band 3
+\ w3sigmpro_ep (mag)
+\ ___ Single-exposure profile-fit photometric measurement uncertainty, band 3
+\ w3rchi2_ep
+\ ___ Reduced chi^2 of single-exposure profile-fit, band 3
+\ w4mpro_ep (mag)
+\ ___ Single-exposure profile-fit  magnitude, band 4
+\ w4sigmpro_ep (mag)
+\ ___ Single-exposure profile-fit photometric measurement uncertainty, band 4
+\ w4rchi2_ep
+\ ___ Reduced chi^2 of single-exposure profile-fit, band 4
+\ qi_fact
+\ ___ Frame image quality score
+\ saa_sep (deg)
+\ ___ SAA separation. Distance from frame center to SAA boundary
+\ moon_masked
+\ ___ flag (0/1) indicating whether frame is within the moon-mask area in each band
+\ dist (arcsec)
+\ ___ Distance between the target position and each source in arcsec.
+\ angle (deg)
+\ ___ Position Angle in degree.
+\
+|                 source_id_mf|          ra|         dec|   nb|   na| cc_flags|  frame_id|            mjd| w1mpro_ep| w1sigmpro_ep| w1rchi2_ep| w2mpro_ep| w2sigmpro_ep| w2rchi2_ep| w3mpro_ep| w3sigmpro_ep| w3rchi2_ep| w4mpro_ep| w4sigmpro_ep| w4rchi2_ep| qi_fact| saa_sep| moon_masked|           dist|       angle|
+|                         char|      double|      double|  int|  int|     char|      char|         double|    double|       double|     double|    double|       double|     double|    double|       double|     double|    double|       double|     double|  double|     int|        char|         double|      double|
+|                             |         deg|         deg|     |     |         |          |            day|       mag|          mag|           |       mag|          mag|           |       mag|          mag|           |       mag|          mag|           |        |     deg|            |         arcsec|         deg|
+|                         null|        null|        null| null| null|     null|      null|           null|      null|         null|       null|      null|         null|       null|      null|         null|       null|      null|         null|       null|    null|    null|        null|           null|        null|
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  11348a095  55554.86220220     13.064         0.035   2.312e+00     13.069         0.078   1.035e+00       null          null        null       null          null        null      1.0      118         0000        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  11345b120  55554.79611370     13.077         0.042   2.321e+00     12.989         0.069   1.067e+00       null          null        null       null          null        null      0.5      123         0000        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  11352a095  55554.99450660     13.116         0.041   2.422e+00     12.968         0.069   1.097e+00       null          null        null       null          null        null      1.0       78         0000        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  11360a095  55555.25898800     13.085         0.045   2.332e+00     13.065         0.075   1.033e+00       null          null        null       null          null        null      1.0       34         0000        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  11453b116  55558.36718650     13.134         0.046   2.503e+00     12.913         0.063   1.228e+00       null          null        null       null          null        null      0.5       26         0000        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  05706a186  55368.32430640     13.062         0.038   2.312e+00     13.004         0.093   1.051e+00       null          null        null      7.773          null   1.039e+00      1.0      125         0011        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  05709a162  55368.39052200     13.022         0.035   2.376e+00     13.159         0.102   1.131e+00       null          null        null      7.825          null   1.088e+00      1.0      105         0011        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  05711a104  55368.45661020     13.116         0.037   2.424e+00     12.901         0.074   1.264e+00       null          null        null      7.840          null   1.044e+00      1.0       85         0011        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  05713a113  55368.52282580     13.111         0.037   2.404e+00     13.111         0.088   1.065e+00       null          null        null      7.187          null   1.107e+00      1.0       68         0011        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  05714a186  55368.58891400     13.052         0.036   2.315e+00     13.100         0.077   1.054e+00       null          null        null      7.694          null   1.039e+00      1.0       54         0011        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  05717a162  55368.65512950     13.041         0.037   2.328e+00     13.049         0.070   1.031e+00       null          null        null      7.298          null   1.083e+00      1.0       47         0011        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  05721a161  55368.78730590     13.059         0.042   2.312e+00     13.054         0.065   1.031e+00     11.000         0.422   1.174e+00      7.694          null   1.039e+00      1.0       28         0000        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  05721a162  55368.78743330     12.988         0.038   2.541e+00     13.033         0.069   1.034e+00     10.879          null   1.006e+00      7.866          null   1.054e+00      1.0       29         0000        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  05725a161  55368.91960980     12.966         0.037   2.700e+00     12.988         0.071   1.069e+00     11.383         0.515   1.063e+00      7.526          null   1.091e+00      1.0       32         0000        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  11329b120  55554.26702350     13.095         0.034   2.354e+00     13.264         0.083   1.381e+00       null          null        null       null          null        null      1.0       33         0000        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  11333b120  55554.39932790     13.073         0.038   2.317e+00     13.091         0.075   1.047e+00       null          null        null       null          null        null      1.0       28         0000        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  11337b120  55554.53150490     13.060         0.037   2.312e+00     13.089         0.072   1.045e+00       null          null        null       null          null        null      1.0       49         0000        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  11341b120  55554.66380930     13.060         0.034   2.312e+00     13.085         0.071   1.043e+00       null          null        null       null          null        null      1.0       82         0000        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  11344a095  55554.72989780     13.090         0.035   2.344e+00     13.109         0.073   1.062e+00       null          null        null       null          null        null      1.0      102         0000        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  11349b120  55554.92829070     13.049         0.036   2.318e+00     13.047         0.069   1.031e+00       null          null        null       null          null        null      1.0       98         0000        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  05622a184  55365.54618120     13.099         0.039   2.365e+00     13.073         0.068   1.036e+00     10.802          null   1.015e+00      7.864          null   1.127e+00      1.0       63         0000        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  05705a162  55368.25821830     13.041         0.040   2.328e+00     13.102         0.085   1.055e+00       null          null        null      7.409          null   1.053e+00      1.0      117         0011        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  05626a184  55365.67848500     13.075         0.039   2.319e+00     12.975         0.063   1.086e+00     10.549          null   1.048e+00      7.395          null   1.052e+00      1.0       45         0000        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  05630a183  55365.81066140     13.011         0.033   2.414e+00     12.982         0.063   1.076e+00     10.830         0.338   1.262e+00      7.678          null   1.136e+00      1.0       29         0000        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  05634a183  55365.94296520     13.045         0.037   2.322e+00     13.011         0.070   1.046e+00     10.965          null   1.008e+00      7.467          null   1.053e+00      1.0       36         0000        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  05637a160  55366.00918080     13.091         0.040   2.345e+00     13.293         0.110   1.471e+00     11.390          null   1.034e+00      7.615          null   1.040e+00      1.0       49         0000        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  05638a183  55366.07526910     13.044         0.033   2.323e+00     13.030         0.070   1.035e+00     10.806          null   1.024e+00      7.620          null   1.041e+00      1.0       63         0000        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  05641a107  55366.14148460     13.051         0.035   2.316e+00     13.158         0.088   1.130e+00     11.273          null   1.022e+00      7.881          null   1.045e+00      1.0       81         0000        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  05643a100  55366.20757290     13.059         0.034   2.312e+00     12.908         0.061   1.241e+00     11.245          null   1.500e+00      7.969          null   1.062e+00      1.0      101         0000        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  05645a159  55366.27378840     13.074         0.036   2.318e+00     13.095         0.070   1.050e+00     11.264          null   1.067e+00      7.774          null   1.062e+00      1.0      122         0000        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  05694a185  55367.92739450     13.052         0.038   2.315e+00     12.866         0.070   1.402e+00     10.888          null   1.006e+00      7.678          null   1.039e+00      1.0       33         0011        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  05694a186  55367.92752190     13.103         0.040   2.376e+00     13.036         0.086   1.033e+00     11.384          null   1.065e+00      7.297          null   1.063e+00      1.0       34         0011        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  05698a185  55368.05969830     13.027         0.037   2.359e+00     13.162         0.085   1.137e+00     11.389          null   1.074e+00      7.322          null   1.075e+00      1.0       59         0011        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  05703a106  55368.19200210     13.005         0.034   2.441e+00     13.014         0.075   1.043e+00       null          null        null      7.364          null   1.048e+00      1.0       96         0011        0.003074   109.292167
+          1918p181_ac51-020449  192.0634609   17.7740197     1     0      0000  05626a183  55365.67835760     13.061         0.038   2.312e+00     13.098         0.073   1.052e+00     10.827          null   1.020e+00      7.499          null   1.052e+00      1.0       45         0000        0.003074   109.292167
