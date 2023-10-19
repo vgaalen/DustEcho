@@ -1,5 +1,7 @@
 # Dust Reprocessing Echo Analiser Module for Tidal disturption events - DREAMT
 
+or Dust Echo Analyser for Luminous transcients - DEAL
+
 This radiative transfer simulation is designed to model Dust Echos of Tidal Disruption Events
 
 This work builds upon SKIRT developed by Astronomical Observatory, Ghent University; see https://skirt.ugent.be/
