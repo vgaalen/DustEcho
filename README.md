@@ -36,3 +36,5 @@ chmod +rx downloadResources.sh
 ./makeSKIRT.sh
 ./downloadResources.sh
 ```
+
+The downloadResources.sh executable props you to download different resource packages, only SKIRT9_Resources_Core is necessary.

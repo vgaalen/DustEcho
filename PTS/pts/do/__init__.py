@@ -9,13 +9,13 @@
 #  Package initialization file
 # -----------------------------------------------------------------
 
-## \package pts.do Python scripts exposing PTS functionality to the command line.
+## \package pts.do Exposing PTS functionality to the command line
 #
-# The scripts residing in this directory are intended to be invoked from the Terminal command line, so strictly
-# speaking they are not part of a package since they cannot be imported as a module.
-# Most scripts support one or more command line arguments and call on functions in the Python Toolkit for SKIRT (PTS),
-# effectively exposing PTS functionality to the command line.
+# The Python scripts residing in the (optional) \c do sub-directory of each PTS package are intended to be invoked
+# from the command line, exposing (part of) the package's functionality for interactive use in a terminal session.
+# The \c __main__ module in this package enables executing any of these scripts from the command line,
+# without having to specify the exact location.
 #
-# To facilitate things even further, the \c __main__ module in this package allows executing any of the scripts
-# residing in this directory from the command line, without having to specify its location.
-#
+
+from .command import doWithCommandLineArguments, listCommands, CommandScript
+from .initialize import initializePTS
