@@ -1,10 +1,8 @@
-# Dust Reprocessing Echo Analiser Module for Tidal disturption events - DREAMT
-
-or Dust Echo Analyser for Luminous transcients - DEAL
+# Dust Reprocessing Echo Analiser Module for Tidal disturption events
 
 This radiative transfer simulation is designed to model Dust Echos of Tidal Disruption Events
 
-This work builds upon SKIRT developed by Astronomical Observatory, Ghent University; see https://skirt.ugent.be/
+This work builds upon SKIRT developed by Astronomical Observatory, Ghent University; see https://skirt.ugent.be/ or https://github.com/SKIRT/SKIRT9.
 
 ## Installation Instructions
 
@@ -39,4 +37,4 @@ chmod +rx downloadResources.sh
 ./downloadResources.sh
 ```
 
-The downloadResources.sh executable props you to download different resource packages, only SKIRT9_Resources_Core is necessary.
+The downloadResources.sh executable prompts you to download different resource packages, only SKIRT9_Resources_Core is required.
