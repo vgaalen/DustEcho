@@ -12,8 +12,23 @@ wl_w2=4.618*u.um
 
 def plot(data,W1,W2,values=[],label='',save='test.pdf'):
     """
-    let data be a list of arrays which contain the MJDs in the first column and luminosities for W1 and W2 in the second
-    For multiple lines, give the label for the parameter you are varying over and the corresponding values for a gradient over these lines
+    Plot one or multiple simulated lightcurves over the WISE observations.
+    If multiple lightcurves are given, they are plotted with a colorbar.
+    The color of each curve is determined by the value in the values array.
+    The meaning of the numbers in the values array should be given by the label, which is printed on the colorbar.
+
+    Parameters
+    ----------
+    data : list of arrays
+        list of arrays with MJDs in the first column and luminosities in the second
+    W1 : array
+        array with MJDs in the first column, luminosities in the second and errors in the third
+    W2 : array
+        array with MJDs in the first column, luminosities in the second and errors in the third
+    label : string
+        label for the colorbar
+    save : string
+        filename for the plot
     """
     fig=plt.figure()
     ax=fig.get_axes

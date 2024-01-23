@@ -5,12 +5,31 @@ unitL=u.erg/u.s/u.Hz
 unitF=u.erg/u.s/u.Hz/(u.m**2)
 
 def ABmagtoFlux(ABmag,error):
+    """
+    Convert AB magnitude to flux in erg/s/cm^2/Hz
+
+    Parameters
+    ----------
+    ABmag : float
+        AB magnitude
+    error : float
+        error on the AB magnitude
+    """
     return np.array((10**((ABmag+48.60)/-2.5),-3.34407e-20*np.exp(-0.921034*ABmag)*error))*u.erg/(u.s*u.Hz*u.cm**2)
 
 def WISEmagtoFlux(WISEmag,error,band):
     """
     The WISE dataproducts giva a magnitude with a zeropoint based on Vega.
-    This can be converted using a simple offset
+    This can be converted using a simple offset.
+    
+    Parameters
+    ----------
+    WISEmag : float
+        WISE magnitude
+    error : float
+        error on the WISE magnitude
+    band : int
+        WISE filterband (1,2,3 or 4)
     """
     if type(band)!=int or band==0:
         raise TypeError('Please give the WISE filterband as an integer')
@@ -20,8 +39,23 @@ def WISEmagtoFlux(WISEmag,error,band):
 
 def binning(bins,time,data,error,clean=True):
     """
+    Bins the data in the given bins and returns the binned data
+
     input the dataset as seperate lists/1D-numpy arrays
     give the bins as a list of border values
+
+    Parameters
+    ----------
+    bins : list
+        list of border values of the bins
+    time : list
+        list of time values 
+    data : list
+        list of data values
+    error : list
+        list of error values
+    clean : bool
+        if True, the data will be cleaned from outliers before binning
     """
     binned_time=[]
     binned_data=[]
@@ -73,11 +107,29 @@ def binning(bins,time,data,error,clean=True):
     return np.array((binned_time,binned_data,binned_error))
 
 def FluxtoLum(flux,distance=1171*u.Mpc):
-    """Convert flux to luminosity"""
+    """
+    Convert flux to luminosity
+    
+    Parameters
+    ----------
+    flux : astropy.units.quantity.Quantity
+        flux
+    distance : astropy.units.quantity.Quantity
+        distance
+    """
     return (4*np.pi*distance**2*flux).to(unitL)
 
 def LumtoFlux(lum,distance=1171*u.Mpc):
-    """Convert luminosity to flux"""
+    """
+    Convert luminosity to flux
+    
+    Parameters
+    ----------
+    lum : astropy.units.quantity.Quantity
+        luminosity
+    distance : astropy.units.quantity.Quantity
+        distance
+    """
     return (lum/(4*np.pi*distance**2)).to(unitF)
 
 def bb_temp(flux,wl,Tmin=1e-1,Tmax=100000,Tstep=1):
