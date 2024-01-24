@@ -17,7 +17,7 @@ pts.do.initializePTS()
 wl_w1=3.368*u.um
 wl_w2=4.618*u.um
 
-def get_lightcurve(L_data,T_data,t_data,output_t,shell,grain,FWHM,spaceBins,distance=False,skiname="initShell.ski",Si=False,prefix='v6',
+def get_lightcurve(L_data,T_data,t_data,output_t,shell,grain,FWHM,spaceBins,output_wavelengths=None,distance=False,skiname="initShell.ski",Si=False,prefix='v6',
                    OUTFILES='results/',plot_SED=False,SKIRTpath=None):
     """
     This function uses the SKIRT program (https://skirt.ugent.be/) to simulate a lightcurve for a variable blackbody source with a dust geometry around it. 
@@ -43,6 +43,8 @@ def get_lightcurve(L_data,T_data,t_data,output_t,shell,grain,FWHM,spaceBins,dist
         The full width at half maximum of the transients lightcurve in days.
     spaceBins : int
         The number of spatial bins used in the SKIRT simulation.
+    output_wavelength : array
+        Array describing which wavelengths should be in the output; [min wavelength, max wavelength, number of bins].
     distance : float, optional
         The distance to the transient in Mpc. If not given, the distance is set to 1171 Mpc.
     skiname : str, optional
@@ -67,6 +69,12 @@ def get_lightcurve(L_data,T_data,t_data,output_t,shell,grain,FWHM,spaceBins,dist
     skifile.setStringAttribute('//skirt-simulation-hierarchy/MonteCarloSimulation/mediumSystem/MediumSystem/grid/Sphere1DSpatialGrid/meshRadial/LogMesh[@numBins]','numBins',str(spaceBins))
     skifile.setStringAttribute('//skirt-simulation-hierarchy/MonteCarloSimulation/mediumSystem/MediumSystem/grid/Sphere1DSpatialGrid/meshRadial/LogMesh[@centralBinFraction]','centralBinFraction',str(shell[0]/shell[1]))
     skifile.setStringAttribute('//skirt-simulation-hierarchy/MonteCarloSimulation/mediumSystem/MediumSystem/grid/Sphere1DSpatialGrid[@maxRadius]','maxRadius',str(shell[1]))
+
+    # Setup the wavelength grid
+    if output_wavelengths is not None:
+        skifile.setStringAttribute('//skirt-simulation-hierarchy/MonteCarloSimulation/instrumentSystem/InstrumentSystem/instruments/SEDInstrument/wavelengthGrid/LinWavelengthGrid[@minWavelength]','minWavelength','{0} micron'.format(output_wavelengths[0]))
+        skifile.setStringAttribute('//skirt-simulation-hierarchy/MonteCarloSimulation/instrumentSystem/InstrumentSystem/instruments/SEDInstrument/wavelengthGrid/LinWavelengthGrid[@maxWavelength]','maxWavelength','{0} micron'.format(output_wavelengths[1]))
+        skifile.setStringAttribute('//skirt-simulation-hierarchy/MonteCarloSimulation/instrumentSystem/InstrumentSystem/instruments/SEDInstrument/wavelengthGrid/LinWavelengthGrid[@numWavelengths]','numWavelengths','{0}'.format(output_wavelengths[2]))
     
     if distance!=False:
         if distance==1171*u.Mpc:
@@ -143,8 +151,8 @@ def get_lightcurve(L_data,T_data,t_data,output_t,shell,grain,FWHM,spaceBins,dist
 
     # Interpolate between timesteps to get emmission for every day
     representation=np.zeros((len(lightcurve[0][0,:]),len(wavelengths),3,len(t_data)+4))
-    w1=np.argmin(np.abs(wavelengths-wl_w1.value))
-    w2=np.argmin(np.abs(wavelengths-wl_w2.value))
+    #w1=np.argmin(np.abs(wavelengths-wl_w1.value))
+    #w2=np.argmin(np.abs(wavelengths-wl_w2.value))
     for wl in tqdm(range(len(wavelengths)),leave=True):
         for i in range(1,len(lightcurve[0][0,:])-1): # first column contains wavelengths and final contains overflow, therefore these are discarded
             y=[]
@@ -164,9 +172,9 @@ def get_lightcurve(L_data,T_data,t_data,output_t,shell,grain,FWHM,spaceBins,dist
             representation[i,wl,0,:len(a[0])]=a[0]
             representation[i,wl,1,:len(a[1])]=a[1]
             representation[i,wl,2,0]=a[2]
-            if i in [1,2,5,10,50,100]:
-                if wl==w1:
-                    a=splev(np.linspace(t_data[0],t_data[-1],30),(representation[i,w1,0,:],representation[i,w1,1,:],int(representation[i,wl,2,0])))
+            #if i in [1,2,5,10,50,100]:
+            #    if wl==w1:
+            #        a=splev(np.linspace(t_data[0],t_data[-1],30),(representation[i,w1,0,:],representation[i,w1,1,:],int(representation[i,wl,2,0])))
     lc_total=np.zeros((len(output_t),len(wavelengths)))
     for i in tqdm(range(len(output_t)),desc="Compile Lightcurve",leave=False,position=2):
         for t in np.arange(0,int(np.floor(output_t[i]-t_data[0])),1):
@@ -204,7 +212,7 @@ def get_lightcurve(L_data,T_data,t_data,output_t,shell,grain,FWHM,spaceBins,dist
 
         plt.figure()
         for i in range(len(t_data)):
-            plt.plot(lightcurve[i][w1,:],label=t_data[i])
+            plt.plot(lightcurve[i][0,:],label=t_data[i])
         plt.xlabel('Days after emission')
         plt.ylabel('Flux (Jy)')
         plt.yscale('log')
