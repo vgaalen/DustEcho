@@ -1,4 +1,4 @@
-# Dust Reprocessing Echo Analiser Module for Tidal disturption events
+# Dust Reprocessing Echo Analiser Module for Tidal disruption events
 
 This radiative transfer simulation is designed to model Dust Echos of Tidal Disruption Events
 
@@ -38,3 +38,8 @@ chmod +rx downloadResources.sh
 ```
 
 The downloadResources.sh executable prompts you to download different resource packages, only SKIRT9_Resources_Core is required.
+
+#### Trying out the simulation
+
+This repository includes two notebooks that show the capabilities of this simulation.
+DustEcho.ipynb shows how to generate a simulated lightcurve for ASASSN-15lh, while DustEchoCompare.ipynb does this using multiple values for the minimum grain size.
