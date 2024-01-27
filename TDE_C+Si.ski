@@ -612,7 +612,7 @@
                 <instruments type="Instrument">
                     <SEDInstrument instrumentName="instrument1" distance="1171 Mpc" inclination="0 deg" azimuth="0 deg" roll="0 deg" radius="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false">
                         <wavelengthGrid type="WavelengthGrid">
-                            <LogWavelengthGrid minWavelength="1 micron" maxWavelength="10 micron" numWavelengths="10"/>
+                            <LinWavelengthGrid minWavelength="3.368 micron" maxWavelength="4.618 micron" numWavelengths="2"/>
                         </wavelengthGrid>
                     </SEDInstrument>
                 </instruments>
