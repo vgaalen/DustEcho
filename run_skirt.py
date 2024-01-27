@@ -111,8 +111,10 @@ def get_lightcurve(L_data,T_data,t_data,output_t,shell,grain,FWHM,spaceBins,outp
     static=False # when True this parameter prevents any further sublimation (or actually prevent non-physical regrowth of dust when the transient falls off)
     for t in tqdm(range(len(t_data)),desc="SKIRT Runs"):
         # Run SKIRT
-        lightcurve_t,SED_t,radius_t,temp_t,wavelengths=runSKIRT(L_data[1,t],T_data[1,t],t_data[t],skifile,OUTFILES=OUTFILES,SKIRTpath=SKIRTpath)
+        lightcurve_t,SED_t,radius_t,temp_t,wavelengths,simulation=runSKIRT(L_data[1,t],T_data[1,t],t_data[t],skifile,OUTFILES=OUTFILES,SKIRTpath=SKIRTpath)
         # Save the output
+        if np.sum(lightcurve_t)==0.:
+            return 0,0,0,0, simulation
         SED.append(SED_t)
         lightcurve.append(lightcurve_t)
         temp.append(temp_t)
@@ -218,7 +220,7 @@ def get_lightcurve(L_data,T_data,t_data,output_t,shell,grain,FWHM,spaceBins,outp
         plt.yscale('log')
         plt.savefig('plots/'+prefix+'t_bin_compare_w1.pdf')
 
-    return lc_total*u.Jy,wavelengths,temp,radius
+    return lc_total*u.Jy,wavelengths,temp,radius, simulation
 
 def runSKIRT(L,T,MJD,skifile,OUTFILES="",SKIRTpath=None):
     """
@@ -264,6 +266,7 @@ def runSKIRT(L,T,MJD,skifile,OUTFILES="",SKIRTpath=None):
     simulation = skirt.execute(OUTFILES+str(int(MJD))+"/run.ski",outDirPath=OUTFILES+str(int(MJD))+"/", console='brief')
 
     if os.path.isfile(OUTFILES+str(int(MJD))+'/run_instrument1_sed.dat')==False or os.path.isfile(OUTFILES+str(int(MJD))+'/run_instrument1_lc.dat')==False:
+        print("ERROR: SKIRT did not produce output files")
         return 0,0,0,0,0, simulation
     # Load the output
     SED=np.loadtxt(OUTFILES+str(int(MJD))+'/run_instrument1_sed.dat')
