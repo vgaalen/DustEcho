@@ -260,19 +260,21 @@ def runSKIRT(L,T,MJD,skifile,OUTFILES="",SKIRTpath=None):
             os.remove(f)
 
     # Run SKIRT
-    skifile.saveTo(OUTFILES+str(int(MJD))+"/torus.ski")
-    skirt.execute(OUTFILES+str(int(MJD))+"/torus.ski",outDirPath=OUTFILES+str(int(MJD))+"/", console='brief')
+    skifile.saveTo(OUTFILES+str(int(MJD))+"/run.ski")
+    simulation = skirt.execute(OUTFILES+str(int(MJD))+"/run.ski",outDirPath=OUTFILES+str(int(MJD))+"/", console='brief')
 
+    if os.path.isfile(OUTFILES+str(int(MJD))+'/run_instrument1_sed.dat')==False or os.path.isfile(OUTFILES+str(int(MJD))+'/run_instrument1_lc.dat')==False:
+        return 0,0,0,0,0, simulation
     # Load the output
-    SED=np.loadtxt(OUTFILES+str(int(MJD))+'/torus_instrument1_sed.dat')
-    lightcurve=np.loadtxt(OUTFILES+str(int(MJD))+'/torus_instrument1_lc.dat')
+    SED=np.loadtxt(OUTFILES+str(int(MJD))+'/run_instrument1_sed.dat')
+    lightcurve=np.loadtxt(OUTFILES+str(int(MJD))+'/run_instrument1_lc.dat')
 
     # Find the inner radius of every dust shell and the temperature at that radius
     temp=[]
     radius=[]
     i=0
-    while os.path.isfile(OUTFILES+str(int(MJD))+'/torus_medium-temperature_{0}_T_xy.fits'.format(i)):
-        datafile=fits.open(OUTFILES+str(int(MJD))+'/torus_medium-temperature_{0}_T_xy.fits'.format(i))[0]
+    while os.path.isfile(OUTFILES+str(int(MJD))+'/run_medium-temperature_{0}_T_xy.fits'.format(i)):
+        datafile=fits.open(OUTFILES+str(int(MJD))+'/run_medium-temperature_{0}_T_xy.fits'.format(i))[0]
         temperature=datafile.data
         size=int(np.ceil(0.5*len(temperature[0,:])))
         # Handle the no sublimation case
@@ -295,4 +297,4 @@ def runSKIRT(L,T,MJD,skifile,OUTFILES="",SKIRTpath=None):
                     break
     
     wavelengths=SED[:,0]
-    return lightcurve,SED,radius,temp,wavelengths
+    return lightcurve,SED,radius,temp,wavelengths,simulation
